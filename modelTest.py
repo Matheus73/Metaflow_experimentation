@@ -1,6 +1,6 @@
 from metaflow import FlowSpec,step,Parameter,IncludeFile
-from data_generator import dfGenerator
 
+# this function is to generate a complete path of dataset
 def script_path(filename):
     import os
     filepath = os.path.join(os.path.dirname(__file__))
@@ -8,9 +8,14 @@ def script_path(filename):
 
 class ModelTest(FlowSpec):
 
+    # receive dataset
     csv_data = IncludeFile("csv_data",help="The path of the houses data",default=script_path("USA_Housing.csv"))
+    # This is to say the name of coutry but not is used
     name = Parameter("name",help="country name",default="USA")
     
+    #IncludeFile and Parameter are used to receive in the execution one or more atributes
+    #in this case to receive the DataSet and the name of country
+
     @step
     def start(self):
         print("modelFlow is starting!")
