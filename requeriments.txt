@@ -1,0 +1,13 @@
+==================================
+            Requeriments
+==================================
+
+------ used libraries ------------
+
++- Metaflow:
++- os
++- pandas
++- io 
++- sklearn
++- numpy
++- seaborn
